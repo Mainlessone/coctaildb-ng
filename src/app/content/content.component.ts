@@ -1,6 +1,6 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CoctailService } from '../services/coctail.service';
-import { Subscription, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { ICategory } from '../models/category.interface';
 
 @Component({
@@ -16,7 +16,6 @@ export class ContentComponent implements OnInit {
 
   ngOnInit(): void {
     this.categories$ = this.coctailService.getCat();
-    this.coctailService.getCat().subscribe(x => console.log(x));
   }
 
 }

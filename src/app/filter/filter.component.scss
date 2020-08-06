@@ -1,70 +1,23 @@
-*{
-  padding: 0;
+
+#checkbox {
+  background: #818181;
+}
+.category-name {
+  font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+
+
+color: #818181;
 }
 
-#filter {
-  width: 220px;
-  height: 440px;
-  position: relative;
-  background: #FFFFFF;
-  border: 1px solid black;
-
-  .filter-block {
-    position: absolute;
-    width: 180px;
-    height: 399px;
-    left: 20px;
-    top: 20px;
-    border: 1px solid black;
-
-    div {
-      margin: 0;
-      list-style-type: none;
-      position: relative;
-
-      .category {
-        height: 20px;
-        margin: 10px 10px 0 10px;
-
-        input[type=checkbox] {
-          position: absolute;
-          left: 3.51%;
-          right: 3.51%;
-          top: 0%;
-          bottom: 0%;
-
-          background: #818181;
-        }
-
-        label {
-          margin: 0;
-          font-family: Roboto;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 16px;
-          line-height: 19px;
-
-
-          color: #818181;
-        }
-      }
-    }
-
-    .button-apply {
-      position: absolute;
-      width: 180px;
-      height: 39px;
-      left: 20px;
-      top: 380px;
-
-      background: #4E4E4E;
-      border-radius: 10px;
-
-      p {
-        text-align: center;
-        margin: 0 auto;
-      }
-    }
-
-  }
+.button-apply {
+  width: 180px;
+  height: 39px;
+  background: #4E4E4E;
+  border-radius: 10px;
+  color: white;
 }

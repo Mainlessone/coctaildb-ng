@@ -1,10 +1,5 @@
-<div>
-  <ul *ngFor="let cat of (categories$ | async | catFiter)">
-    <li>
-      {{cat.name}}
-      <ul *ngFor="let drink of cat.drinks | async">
-        <li>{{drink.strDrink}}</li>
-      </ul>
-    </li>
-  </ul>
+<div id="content">
+  <div *ngFor="let category of (categories$ | async | catFiter)">
+    <app-category [category]="category"></app-category>
+  </div>
 </div>

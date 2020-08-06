@@ -1,0 +1,15 @@
+<div id="category">
+  <span class="category-name">
+    {{category.name}}
+  </span>
+
+  <div class="wrapper">
+    <div *ngFor="let drink of category.drinks | async">
+      <div class="drink">
+        <img src="{{drink.strDrinkThumb}}" alt="drink">
+        <div class="drink-name">{{drink.strDrink}}</div>
+      </div>
+    </div>
+  </div>
+
+</div>
