@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, BehaviorSubject, Subject } from 'rxjs';
+
+import { Observable, Subject } from 'rxjs';
 import { map, pluck } from 'rxjs/operators';
+
 import { ICategory } from '../models/category.interface';
 import { IDrink } from '../models/drink.interface';
 
@@ -10,19 +12,19 @@ import { IDrink } from '../models/drink.interface';
 })
 export class CoctailService {
 
-  url: string = 'https://www.thecocktaildb.com/api/json/v1/1';
+  private readonly url: string = 'https://www.thecocktaildb.com/api/json/v1/1';
 
-  private readonly categories = new Subject();
+  private readonly categories: Subject<ICategory[]> = new Subject();
 
   constructor(private http: HttpClient) {
     this.getCategoriesFromApi().subscribe(cat => this.setCat(cat));
   }
 
-  public getCat(): Observable<any> {
+  public getCat(): Observable<ICategory[]> {
     return this.categories.asObservable();
   }
 
-  public setCat(newCat): void {
+  public setCat(newCat: ICategory[]): void {
     this.categories.next(newCat);
   }
 

@@ -1,8 +1,9 @@
 import { Observable } from 'rxjs';
+
 import { IDrink } from './drink.interface';
 
 export interface ICategory {
-  name: string;
+  readonly name: string;
+  readonly drinks: Observable<IDrink[]>
   isChecked: boolean;
-  drinks: Observable<IDrink>
 }

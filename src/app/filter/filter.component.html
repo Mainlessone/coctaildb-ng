@@ -1,7 +1,8 @@
 <div class="filter-block">
-  <div class="form-group form-check category" *ngFor="let category of categories">
-    <input type="checkbox" class="form-check-input" id="checkbox" name="cb" [(ngModel)]="category.isChecked">
-    <label class="form-check-label category-name" for="cb">{{category.name}}</label>
+  <div class="form-group form-check category" *ngFor="let category of (categories$ | async); let i = index">
+    <form action="">
+      <input type="checkbox" class="form-check-input" id="cb{{i}}" name="cb{{i}}" [(ngModel)]="category.isChecked">
+      <label class="form-check-label category-name" for="cb{{i}}">{{category.name}}</label>
+    </form>
   </div>
-  <button class="btn button-apply" (click)="applyFilter()">Apply</button>
 </div>

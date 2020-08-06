@@ -1,32 +1,23 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
 import { CoctailService } from '../services/coctail.service';
 
 import { ICategory } from '../models/category.interface'
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.scss']
 })
-export class FilterComponent implements OnInit, OnDestroy {
+export class FilterComponent implements OnInit {
 
-  categories: ICategory[];
-
-  subscription$: Subscription;
+  categories$: Observable<ICategory[]>;
 
   constructor(private coctailService: CoctailService) { }
 
   ngOnInit(): void {
-    this.subscription$ = this.coctailService.getCat().subscribe((cat: ICategory[]) => this.categories = cat);
-  }
-
-  ngOnDestroy(): void {
-    this.subscription$.unsubscribe();
-  }
-
-  applyFilter(): void {
-    this.coctailService.setCat(this.categories);
+    this.categories$ = this.coctailService.getCat();
   }
 
 }

@@ -10,7 +10,6 @@ import { HeaderComponent } from './header/header.component';
 import { FilterComponent } from './filter/filter.component';
 
 import { CoctailService } from './services/coctail.service';
-import { CatFiterPipe } from './pipes/cat-fiter.pipe';
 
 
 @NgModule({

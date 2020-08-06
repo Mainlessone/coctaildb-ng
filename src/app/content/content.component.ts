@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CoctailService } from '../services/coctail.service';
 import { Observable } from 'rxjs';
+
+import { CoctailService } from '../services/coctail.service';
+
 import { ICategory } from '../models/category.interface';
 
 @Component({
