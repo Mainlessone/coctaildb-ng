@@ -1,0 +1,9 @@
+<div id="filter">
+  <div class="filter-block">
+    <div class="form-group form-check category" *ngFor="let category of categories">
+      <input type="checkbox" class="form-check-input" id="checkbox" name="checkbox" [(ngModel)]="category.isChecked">
+      <label class="form-check-label" for="checkbox">{{category.name}}</label>
+    </div>
+    <button class="btn button-apply" (click)="applyFilter()">Apply</button>
+  </div>
+</div>
